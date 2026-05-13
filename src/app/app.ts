@@ -1,14 +1,13 @@
-import { Component, signal } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
-import { Hero } from './hero/hero';
-import { Navbar } from './shared/navbar/navbar';
+import { Component, signal } from '@angular/core'
+import { RouterLink, RouterModule, RouterOutlet } from '@angular/router'
+import { Navbar } from './shared/navbar/navbar'
 
 @Component({
-  selector: 'app-root',
-  imports: [RouterOutlet, Hero, Navbar],
-  templateUrl: './app.html',
-  styleUrl: './app.scss',
+    selector: 'app-root',
+    imports: [RouterOutlet, Navbar, RouterLink, RouterModule],
+    templateUrl: './app.html',
+    styleUrl: './app.scss',
 })
 export class App {
-  protected readonly title = signal('portfolio');
+    protected readonly title = signal('portfolio')
 }
