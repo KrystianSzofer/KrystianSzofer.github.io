@@ -2,7 +2,7 @@ button {
     display: block;
     background-color: var(--color-primary);
     font-family: 'Lato';
-    outline: none;
+    border: none;
     cursor: pointer;
     margin: 0px;
     padding: 1rem;
@@ -10,4 +10,8 @@ button {
     padding-right: 1.5rem;
     border-radius: 50px;
     font-size: 1.5rem;
+}
+
+button:hover {
+    background-color: var(--color-primary-hover);
 }

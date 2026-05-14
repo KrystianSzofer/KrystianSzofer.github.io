@@ -1,5 +1,60 @@
-:host {
-    height: 100dvh;
+.about-me-content {
     background: var(--color-white-bg);
-    display: block;
+    display: flex;
+    flex-direction: column;
+    gap: 10rem;
+    padding-top: 10rem;
+}
+
+.about-me {
+    background-color: var(--color-gray-bg);
+    padding-left: 4rem;
+    padding-top: 2rem;
+    height: 400px;
+    flex-direction: column;
+    display: flex;
+    gap: 2rem;
+}
+
+.skills {
+    background-color: var(--color-gray-bg);
+    height: 300px;
+    padding-top: 2rem;
+}
+
+h1 {
+    color: var(--color-black);
+}
+
+p {
+    max-width: 600px;
+    color: var(--color-black-sec);
+}
+
+h2 {
+    color: var(--color-black);
+}
+
+.heading-main {
+    font-family: 'Lato';
+}
+
+.heading-italic {
+    font-style: italic;
+    font-size: 4rem;
+}
+
+.skill-heading-main {
+    font-family: 'Lato';
+    font-weight: 400;
+}
+
+.skill-heading-italic {
+    font-style: italic;
+    font-weight: 600;
+}
+
+.title {
+    display: flex;
+    justify-content: center;
 }

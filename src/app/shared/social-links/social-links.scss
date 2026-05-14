@@ -1,0 +1,15 @@
+:host {
+    position: fixed;
+    bottom: 2rem;
+    left: calc(50% - 4rem);
+}
+
+ul {
+    list-style-type: none;
+    display: flex;
+    gap: 2rem;
+}
+
+a:hover {
+    color: var(--color-primary-hover);
+}
