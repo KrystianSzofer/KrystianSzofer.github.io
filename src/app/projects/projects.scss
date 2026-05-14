@@ -1,5 +1,8 @@
 :host {
-    display: block;
     height: 100dvh;
-    background: #756969;
+    display: block;
+}
+
+.projects-content {
+    background-color: var(--color-black-bg);
 }

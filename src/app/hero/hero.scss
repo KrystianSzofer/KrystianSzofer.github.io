@@ -8,14 +8,30 @@
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-
-    display: grid;
-    grid-template-columns: repeat(8, 1fr);
-    gap: 20px;
-    padding: 0 64px;
-    align-content: end;
-    padding-bottom: 40dvh;
+    display: flex;
+    align-items: end;
 }
 .hero-content {
-    grid-column: 1 / 5;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    gap: 2rem;
+    position: absolute;
+    bottom: 30dvh;
+    padding-left: 4rem;
+}
+
+.tags {
+    display: flex;
+    gap: 2rem;
+}
+
+span {
+    background-color: #00000066;
+    color: var(--color-white-sec);
+    font-size: 2rem;
+    padding: 1rem;
+    border: 1px;
+    border-style: solid;
+    border-radius: 15px;
 }
