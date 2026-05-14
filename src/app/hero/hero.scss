@@ -1,5 +1,21 @@
 :host {
     height: 100dvh;
-    background: #756969;
-    display: block;
+    background-image:
+    // order important: otherwise the gradient wouldnt apply
+
+        linear-gradient(to bottom, #00000080, #000000e5),
+        url('/images/hero_bg.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    gap: 20px;
+    padding: 0 64px;
+    align-content: end;
+    padding-bottom: 40dvh;
+}
+.hero-content {
+    grid-column: 1 / 5;
 }

@@ -9,10 +9,24 @@
 nav {
     position: fixed;
     width: 100%;
+    align-items: center;
     justify-content: flex-end;
     gap: 4rem;
     padding-left: 4rem;
     padding-right: 4rem;
     padding-top: 2rem;
     display: flex;
+
+    a:link,
+    a:visited,
+    a:hover,
+    a:active {
+        font-size: 1.5rem;
+        text-decoration: none;
+        color: var(--color-white);
+    }
+
+    a:hover {
+        color: var(--color-primary);
+    }
 }

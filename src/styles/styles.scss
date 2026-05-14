@@ -1,9 +1,16 @@
+// colors
+@use 'colors';
+
+// fonts
+@use 'typography';
+
+// components (button, ...)
+
+@use 'components/button';
+
 * {
     margin: 0;
     padding: 0;
     // Border-Box makes siza a total value - usually padding adds to the width/height
     box-sizing: border-box;
 }
-// Accessibility
-
-// Skip Link
