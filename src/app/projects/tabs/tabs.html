@@ -1,0 +1,20 @@
+<div class="tabs">
+    <button
+        (click)="SetTab(Tab.Task)"
+        [class.active]="currentTab() === Tab.Task"
+    >
+        Aufgabe
+    </button>
+    <button
+        (click)="SetTab(Tab.Design)"
+        [class.active]="currentTab() === Tab.Design"
+    >
+        Design
+    </button>
+    <button
+        (click)="SetTab(Tab.Insight)"
+        [class.active]="currentTab() === Tab.Insight"
+    >
+        Lernerfahrung
+    </button>
+</div>

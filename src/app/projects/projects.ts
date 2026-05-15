@@ -1,8 +1,9 @@
 import { Component } from '@angular/core'
+import { Tabs } from './tabs/tabs'
 
 @Component({
     selector: 'app-projects',
-    imports: [],
+    imports: [Tabs],
     templateUrl: './projects.html',
     styleUrl: './projects.scss',
 })

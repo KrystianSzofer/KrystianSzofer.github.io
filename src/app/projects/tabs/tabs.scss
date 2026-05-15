@@ -1,0 +1,30 @@
+.tabs {
+    display: flex;
+    direction: row;
+    gap: 0;
+
+    button {
+        color: var(--color-white);
+        padding: 1rem;
+        background-color: var(--color-black-sec);
+        border-radius: 0;
+        width: 200px;
+        text-align: center;
+        font-weight: 400;
+
+        &.active {
+            background-color: var(--color-primary);
+            color: var(--color-black);
+            font-weight: 600;
+        }
+    }
+
+    button:first-child {
+        border-top-left-radius: 25px;
+        border-bottom-left-radius: 25px;
+    }
+    button:last-child {
+        border-top-right-radius: 25px;
+        border-bottom-right-radius: 25px;
+    }
+}
