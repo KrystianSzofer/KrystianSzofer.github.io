@@ -1,7 +1,12 @@
-.tabs {
+.tabs-container {
     display: flex;
-    direction: row;
+    flex-direction: row;
     gap: 0;
+
+    & ul {
+        list-style: none;
+        display: flex;
+    }
 
     button {
         color: var(--color-white);

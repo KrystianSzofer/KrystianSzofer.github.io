@@ -1,20 +1,37 @@
-<div class="tabs">
-    <button
-        (click)="SetTab(Tab.Task)"
-        [class.active]="currentTab() === Tab.Task"
-    >
-        Aufgabe
-    </button>
-    <button
-        (click)="SetTab(Tab.Design)"
-        [class.active]="currentTab() === Tab.Design"
-    >
-        Design
-    </button>
-    <button
-        (click)="SetTab(Tab.Insight)"
-        [class.active]="currentTab() === Tab.Insight"
-    >
-        Lernerfahrung
-    </button>
+<div role="tablist" class="tabs-container">
+    <ul>
+        <li>
+            <button
+                id="tab-0"
+                type="button"
+                role="tab"
+                (click)="SetTab(Tab.Task)"
+                [class.active]="currentTab() === Tab.Task"
+            >
+                Aufgabe
+            </button>
+        </li>
+        <li>
+            <button
+                id="tab-1"
+                type="button"
+                role="tab"
+                (click)="SetTab(Tab.Design)"
+                [class.active]="currentTab() === Tab.Design"
+            >
+                Design
+            </button>
+        </li>
+        <li>
+            <button
+                id="tab-2"
+                type="button"
+                role="tab"
+                (click)="SetTab(Tab.Insight)"
+                [class.active]="currentTab() === Tab.Insight"
+            >
+                Lernerfahrung
+            </button>
+        </li>
+    </ul>
 </div>
