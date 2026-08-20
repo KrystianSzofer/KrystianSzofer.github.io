@@ -20,15 +20,15 @@
         &.active {
             background-color: var(--color-primary);
             color: var(--color-black);
-            font-weight: 600;
+            font-weight: 400;
         }
     }
 
-    button:first-child {
+    ul li:first-child button {
         border-top-left-radius: 25px;
         border-bottom-left-radius: 25px;
     }
-    button:last-child {
+    ul li:last-child button {
         border-top-right-radius: 25px;
         border-bottom-right-radius: 25px;
     }

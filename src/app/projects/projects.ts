@@ -1,4 +1,4 @@
-import { Component } from '@angular/core'
+import { Component, Signal } from '@angular/core'
 import { Tabs } from './tabs/tabs'
 
 @Component({
