@@ -1,5 +1,10 @@
-import { Component, Signal } from '@angular/core'
+import { Component, signal } from '@angular/core'
 import { Tabs } from './tabs/tabs'
+
+enum ProjectName {
+    Sitzungsverwaltungstool,
+    FormAutomatisierung,
+}
 
 @Component({
     selector: 'app-projects',
@@ -7,4 +12,11 @@ import { Tabs } from './tabs/tabs'
     templateUrl: './projects.html',
     styleUrl: './projects.scss',
 })
-export class Projects {}
+export class Projects {
+    readonly ProjectName = ProjectName
+    currentProject = signal<ProjectName>(ProjectName.Sitzungsverwaltungstool)
+
+    SetProject(project: ProjectName) {
+        this.currentProject.set(project)
+    }
+}
