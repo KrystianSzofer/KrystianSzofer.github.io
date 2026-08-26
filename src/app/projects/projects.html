@@ -1,22 +1,16 @@
 <div class="projects-content">
     <div class="sidebar">
         <p>Projektauswahl</p>
+        @for (project of projects; track project.id) {
         <span
             class="sidebar-element"
-            (click)="SetProject(ProjectName.Sitzungsverwaltungstool)"
-            [class.active]="currentProject() === ProjectName.Sitzungsverwaltungstool"
+            [class.active]="project.id === currentProjectId()"
+            (click)="SetProject(project.id)"
         >
             <div class="line"></div>
-            <button>Sitzungsverwaltungstool</button>
+            <button>{{ project.name }}</button>
         </span>
-        <span
-            class="sidebar-element"
-            (click)="SetProject(ProjectName.FormAutomatisierung)"
-            [class.active]="currentProject() === ProjectName.FormAutomatisierung"
-        >
-            <div class="line"></div>
-            <button>Automatisierung von Formularen</button>
-        </span>
+        }
     </div>
     <div class="projects-container">
         <header>
@@ -27,12 +21,24 @@
                 <span> auf die nächste Stufe gebracht haben.</span>
             </p>
         </header>
-        <div class="tab-content">
-            <app-tabs></app-tabs>
-            <section role="tabpanel" id="tabpanel-0">
-                <p>Beschreibung der Aufgabe von Projekt xyz</p>
-            </section>
-        </div>
+        <app-tabs
+            [active]="activeTab()"
+            (tabChange)="setActiveTab($event)"
+        ></app-tabs>
+        @if (currentProject(); as project) {
+        <section role="tabpanel" [id]="'tabpanel-' + activeTab()">
+            @switch (activeTab()) { @case (Tab.Task) {
+            <p>{{ project.description.task }}</p>
+            } @case (Tab.Design) { @for (block of project.description.design;
+            track $index) { @if (block.type === 'text') {
+            <p>{{ block.value }}</p>
+            } @else {
+            <img [src]="block.src" [alt]="block.alt" class="design-image" />
+            } } } @case (Tab.Insight) {
+            <p>{{ project.description['learning-experience'] }}</p>
+            } }
+        </section>
+        }
     </div>
     <div class="projects-spacer" aria-hidden="true"></div>
 </div>

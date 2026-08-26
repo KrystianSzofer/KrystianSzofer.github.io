@@ -5,8 +5,8 @@
                 id="tab-0"
                 type="button"
                 role="tab"
-                (click)="SetTab(Tab.Task)"
-                [class.active]="currentTab() === Tab.Task"
+                (click)="tabChange.emit(Tab.Task)"
+                [class.active]="active() === Tab.Task"
             >
                 Aufgabe
             </button>
@@ -16,8 +16,8 @@
                 id="tab-1"
                 type="button"
                 role="tab"
-                (click)="SetTab(Tab.Design)"
-                [class.active]="currentTab() === Tab.Design"
+                (click)="tabChange.emit(Tab.Design)"
+                [class.active]="active() === Tab.Design"
             >
                 Design
             </button>
@@ -27,8 +27,8 @@
                 id="tab-2"
                 type="button"
                 role="tab"
-                (click)="SetTab(Tab.Insight)"
-                [class.active]="currentTab() === Tab.Insight"
+                (click)="tabChange.emit(Tab.Insight)"
+                [class.active]="active() === Tab.Insight"
             >
                 Lernerfahrung
             </button>

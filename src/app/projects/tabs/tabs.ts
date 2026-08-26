@@ -1,6 +1,6 @@
-import { Component, signal } from '@angular/core'
+import { Component, signal, input, output } from '@angular/core'
 
-enum Tab {
+export enum Tab {
     Task,
     Design,
     Insight,
@@ -14,9 +14,7 @@ enum Tab {
 })
 export class Tabs {
     readonly Tab = Tab
-    currentTab = signal<Tab>(Tab.Task)
 
-    SetTab(tab: Tab) {
-        this.currentTab.set(tab)
-    }
+    active = input.required<Tab>()
+    tabChange = output<Tab>()
 }
