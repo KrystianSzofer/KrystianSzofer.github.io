@@ -1,9 +1,9 @@
-import { Component, signal, computed } from '@angular/core'
+import { Component, signal, computed, afterNextRender } from '@angular/core'
 import { Tabs, Tab } from './tabs/tabs'
 
 type ContentBlock =
     | { type: 'text'; value: string }
-    | { type: 'image'; src: string; alt?: string }
+    | { type: 'image'; src: string; alt: string }
 
 interface Project {
     readonly id: number
@@ -26,7 +26,8 @@ const projects: Project[] = [
             design: [
                 {
                     type: 'image',
-                    src: 'public/images/project-page/0-design.png',
+                    src: '/images/project-page/0-design.webp',
+                    alt: 'Startseite mit Button zum Sitzung starten, Informationen zur letzten Sitzung und Tabelle mit letzten Aktivitäten.',
                 },
                 {
                     type: 'text',
@@ -34,7 +35,7 @@ const projects: Project[] = [
                 },
             ],
             ['learning-experience']:
-                'Eine sehr große Aufgabe war die Umsetzung eines Markdown Editors. Dabei lernte ich wichtige Grundprinzipien (Parsing, Highlighting, Keymaps) solcher Editoren. Auch war es das erste Projekt, wo ich Dev Ops allein übernommen habe, um es auf GitLab mittels einer Pipeline sowie eines Runners zum Laufenb zu bringen.',
+                'Eine sehr große Aufgabe war die Umsetzung eines Markdown Editors. Dabei lernte ich wichtige Grundprinzipien (Parsing, Highlighting, Keymaps) solcher Editoren. Auch war es das erste Projekt, wo ich Dev Ops allein übernommen habe, um es auf GitLab mittels einer Pipeline sowie eines Runners zum Laufen zu bringen.',
         },
     },
 
@@ -47,11 +48,12 @@ const projects: Project[] = [
             design: [
                 {
                     type: 'image',
-                    src: 'public/images/project-page/1-design.png',
+                    src: '/images/project-page/1-design.avif',
+                    alt: 'Login-Seite mit Bellis-Logo und Anmeldeformular für Benutzername und Passwort sowie einem Anmelden-Button.',
                 },
                 {
                     type: 'text',
-                    value: 'Ein zentriertes Login-Design. Minimalistisch gehalten, um professioneller zu wirken. Klassisch in der Mitte, da dort der User Fokus liegt.',
+                    value: 'Mein zentriertes Login-Design aus der Entwicklungsphase. Minimalistisch gehalten, um professioneller zu wirken. Klassisch in der Mitte, da dort der User Fokus liegt.',
                 },
             ],
             ['learning-experience']:
@@ -87,6 +89,23 @@ export class Projects {
         if (this.currentProjectId() !== id) {
             this.currentProjectId.set(id)
             this.activeTab.set(Tab.Task)
+        }
+    }
+
+    constructor() {
+        afterNextRender(() => {
+            this.preloadAllDesignImages()
+        })
+    }
+
+    private preloadAllDesignImages() {
+        for (const project of this.projects) {
+            for (const block of project.description.design) {
+                if (block.type === 'image') {
+                    const img = new Image()
+                    img.src = block.src
+                }
+            }
         }
     }
 
