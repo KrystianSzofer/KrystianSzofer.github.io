@@ -28,14 +28,16 @@
         @if (currentProject(); as project) {
         <section role="tabpanel" [id]="'tabpanel-' + activeTab()">
             @switch (activeTab()) { @case (Tab.Task) {
-            <p>{{ project.description.task }}</p>
+            <p class="panel-p">{{ project.description.task }}</p>
             } @case (Tab.Design) { @for (block of project.description.design;
             track $index) { @if (block.type === 'text') {
-            <p>{{ block.value }}</p>
+            <p class="panel-p">{{ block.value }}</p>
             } @else {
             <img [src]="block.src" [alt]="block.alt" class="design-image" />
             } } } @case (Tab.Insight) {
-            <p>{{ project.description['learning-experience'] }}</p>
+            <p class="panel-p">
+                {{ project.description['learning-experience'] }}
+            </p>
             } }
         </section>
         }

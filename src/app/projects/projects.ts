@@ -19,10 +19,10 @@ interface Project {
 const projects: Project[] = [
     {
         id: 0,
-        name: 'Sitzungsverwaltungstool',
+        name: 'Sitzungsmanager',
 
         description: {
-            task: 'Die Fachschaftsräte an der Universität benötigten eine moderne Version des aktullen Sitzungstool, dass zur Protokollierung von Sitzungen benutzt wird. Dabei braucht es ein moderenes Design, neue verständliche Icons und die Unterstützung von gleichzeitiger Bearbeitung in einem Markdown Editor.',
+            task: 'Die Erstellung einer Anwendung zur Verwaltung von Sitzungen. Zum Protokollieren wird ein Markdown-Editor benötigt. Für die Speicherung ist ein Filtersystem sinnvoll. Zudem sollen Umfragen möglich sein, die von Diagrammen begleitet werden.',
             design: [
                 {
                     type: 'image',
@@ -31,20 +31,20 @@ const projects: Project[] = [
                 },
                 {
                     type: 'text',
-                    value: 'Zu sehen ist die Home-Seite im dark mode.',
+                    value: 'Startseite als Dashboard im Dunkelmodus. Der Button im Header ermöglicht die Umschaltung der Darstellungsmodi. Rote Akzente sollen auffallen, weshalb sie sparsam auf die wichtigsten Funktionen eingesetzt werden.',
                 },
             ],
             ['learning-experience']:
-                'Eine sehr große Aufgabe war die Umsetzung eines Markdown Editors. Dabei lernte ich wichtige Grundprinzipien (Parsing, Highlighting, Keymaps) solcher Editoren. Auch war es das erste Projekt, wo ich Dev Ops allein übernommen habe, um es auf GitLab mittels einer Pipeline sowie eines Runners zum Laufen zu bringen.',
+                'Wie ein Text-Editor und eigene Highlight-Styles funktionieren. Dazu kann man unterschiedliche Schriftgrößen für verschiedene Überschriften einstellen. Oder auch Tastenbefehle für das Einrücken von Text definieren. Wichtig war, dass Nutzereingaben bereinigt werden müssen, um böswilligen Code fremder zu vermeiden.\n\n Ich habe einen Einblick in Angular bekommen. Dabei habe ich mit Signals gearbeitet und Zustände verwaltet. Auch Routing ist mir nun vertraut. Für einen API-Service habe ich Dependency Injection genutzt und eigene Models mittels Interfaces gebaut.   ',
         },
     },
 
     {
         id: 1,
-        name: 'Formautomatisierung',
+        name: 'Formularautomatisierung',
 
         description: {
-            task: 'Im Rahmen des Software Engineering Moduls beauftragte uns der Bellis e.V. mit der Entwicklung einer Softwarelösung, die sich mit der Automatisierung von Statistiken und Formularen befassen soll. Dabei soll die händische Arbeit von den Mitarbeitern deutlich vereinfacht werden mittels der App. Filtersysteme, Nutzerkonten, Statistiken und vieles mehr umfasste die Aufgabenstellung.',
+            task: 'Entwicklung einer Softwarelösung, die einen manuellen Prozess in einer Beratungsstelle digitalisiert und automatisiert. Die Anwendung soll Daten über Eingabemasken erfassen sowie Statistiken berechnen und bereitstellen. Unterschiedliche Kontotypen mit abgestuften Berechtigungen sollen den Zugriff auf die Funktionen steuern.',
             design: [
                 {
                     type: 'image',
@@ -53,11 +53,11 @@ const projects: Project[] = [
                 },
                 {
                     type: 'text',
-                    value: 'Mein zentriertes Login-Design aus der Entwicklungsphase. Minimalistisch gehalten, um professioneller zu wirken. Klassisch in der Mitte, da dort der User Fokus liegt.',
+                    value: 'Anmeldeseite für die Software. Ich wählte ein blaues Farbschema, da es zum Logo des Kunden passt und beruhigend wirkt. Einfache Elemente wie die abgeschnittenen Kreise und ein zentrales Rechteck tragen zu einem professionellen Erscheinungsbild bei. Die Kreise sind gelb, da diese Farbe einen Kontrast zum Blau bildet.',
                 },
             ],
             ['learning-experience']:
-                'Das Projekt lehrte mich die Zusammenarbeit in einem 10-köpfigen Team. Denn umso größer die Team Größe, desto mehr Koordination und Kommunikation ist nötig, um ein gutes Produkt auf die Beine zu stellen. Außerdem war es mein erster Berührungspunkt mit der React-Technologie.',
+                'In einem zehnköpfigen Team war ich für das Frontend zuständig. Dabei lernte ich, wie wichtig klare Kommunikation für den Projekterfolg ist.\n\n Das war mein Einstieg in React. Ich entwickelte eigene Komponenten. Dabei nutzte ich useState für lokale Zustände und useEffect für Datenbankabfragen.\n\n In Kundengesprächen erfsste ich die Anforderungen an die Software. Dabei war es wichtig, gezielt nachzufragen und technische Inhalte verständlich zu erklären. ',
         },
     },
 ]

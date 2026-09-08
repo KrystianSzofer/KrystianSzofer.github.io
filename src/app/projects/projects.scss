@@ -157,6 +157,16 @@ app-tabs {
     }
 }
 
+.panel-p {
+    white-space: pre-line;
+    margin: 0;
+}
+
+.panel-p + .design-image,
+.design-image + .panel-p {
+    margin-top: 1rem;
+}
+
 .design-image {
     width: 100%;
     max-width: 600px;
