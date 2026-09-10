@@ -23,6 +23,18 @@
             </h2>
         </div>
 
-        <div class="scrolling-logos"></div>
+        <div class="scrolling-logos">
+            <span class="logos-container">
+                @for(logo of logos; track logo) {
+                <img
+                    class="logo"
+                    [src]="'logos/' + logo + '.svg'"
+                    [alt]="logo"
+                />
+                } @empty {
+                <p>Logos not found.</p>
+                }
+            </span>
+        </div>
     </div>
 </div>

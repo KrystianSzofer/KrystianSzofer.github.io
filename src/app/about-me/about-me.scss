@@ -58,3 +58,15 @@ h2 {
     display: flex;
     justify-content: center;
 }
+
+// logos
+
+.logos-container {
+    display: flex;
+    gap: 2rem;
+}
+
+.logo {
+    width: 4rem;
+    height: 4rem;
+}
