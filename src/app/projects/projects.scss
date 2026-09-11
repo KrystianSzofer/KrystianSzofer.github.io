@@ -1,5 +1,5 @@
 :host {
-    height: 100dvh;
+    height: 100vh;
     display: block;
     position: relative;
 }
@@ -8,6 +8,7 @@
 
 .projects-content {
     background-color: var(--color-black-bg);
+    box-sizing: border-box;
     height: 100%;
     display: flex;
     flex-direction: row;
@@ -24,6 +25,7 @@
 }
 
 article {
+    box-sizing: border-box;
     height: 100%;
     margin: 0;
     padding-top: 2rem;

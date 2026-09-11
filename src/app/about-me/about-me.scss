@@ -1,6 +1,8 @@
 .about-me-content {
     background: var(--color-white-bg);
+    box-sizing: border-box;
     display: flex;
+    height: 100vh;
     flex-direction: column;
     gap: 10rem;
     padding-top: 10rem;
@@ -20,7 +22,58 @@
     background-color: var(--color-gray-bg);
     height: 300px;
     padding-top: 2rem;
+    display: flex;
+    flex-direction: column;
 }
+
+// logos
+
+.scrolling-logos {
+    display: flex;
+    align-items: center;
+    flex: 1;
+    padding-bottom: 2rem;
+    overflow: hidden;
+
+    mask-image: linear-gradient(
+        to right,
+        transparent 0%,
+        black 8%,
+        black 90%,
+        transparent 100%
+    );
+    -webkit-mask-image: linear-gradient(
+        to right,
+        transparent 0%,
+        black 8%,
+        black 90%,
+        transparent 100%
+    );
+}
+
+.logos-container {
+    display: flex;
+    width: max-content;
+    animation: scroll 56s linear infinite;
+}
+
+.logo {
+    width: clamp(3rem, 5vw, 5rem);
+    height: clamp(3rem, 5vw, 5rem);
+    flex-shrink: 0;
+    margin-right: clamp(3rem, 5vw, 5rem);
+}
+
+@keyframes scroll {
+    from {
+        transform: translateX(-50%);
+    }
+    to {
+        transform: translateX(0);
+    }
+}
+
+//
 
 h1 {
     color: var(--color-black);
@@ -57,16 +110,4 @@ h2 {
 .title {
     display: flex;
     justify-content: center;
-}
-
-// logos
-
-.logos-container {
-    display: flex;
-    gap: 2rem;
-}
-
-.logo {
-    width: 4rem;
-    height: 4rem;
 }

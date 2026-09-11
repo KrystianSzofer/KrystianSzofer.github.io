@@ -24,5 +24,5 @@ const logoNames = [
     styleUrl: './about-me.scss',
 })
 export class AboutMe {
-    logos = logoNames
+    logos = [...logoNames, ...logoNames]
 }
