@@ -9,6 +9,4 @@ import { SocialLinks } from './shared/social-links/social-links'
     templateUrl: './app.html',
     styleUrl: './app.scss',
 })
-export class App {
-    protected readonly title = signal('portfolio')
-}
+export class App {}

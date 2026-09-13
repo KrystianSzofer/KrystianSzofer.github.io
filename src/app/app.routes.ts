@@ -5,7 +5,7 @@ import { Home } from './home/home'
 export const routes: Routes = [
     {
         path: 'home',
-        title: 'Portfolio',
+        title: 'Krystian Szofer',
         component: Home,
     },
     {

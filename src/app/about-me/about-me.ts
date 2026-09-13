@@ -1,4 +1,5 @@
 import { Component } from '@angular/core'
+import { FadeIn } from '../shared/directives/fade-in'
 
 const logoNames = [
     'HTML5',
@@ -19,7 +20,7 @@ const logoNames = [
 
 @Component({
     selector: 'app-about-me',
-    imports: [],
+    imports: [FadeIn],
     templateUrl: './about-me.html',
     styleUrl: './about-me.scss',
 })
