@@ -1,5 +1,6 @@
 import { Component, signal, computed, afterNextRender } from '@angular/core'
 import { Tabs, Tab } from './tabs/tabs'
+import { FadeIn } from '../shared/directives/fade-in'
 
 type ContentBlock =
     | { type: 'text'; value: string }
@@ -64,7 +65,7 @@ const projects: Project[] = [
 
 @Component({
     selector: 'app-projects',
-    imports: [Tabs],
+    imports: [Tabs, FadeIn],
     templateUrl: './projects.html',
     styleUrl: './projects.scss',
 })

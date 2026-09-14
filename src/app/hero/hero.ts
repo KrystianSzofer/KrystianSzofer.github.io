@@ -3,7 +3,7 @@ import { Navbar } from '../shared/navbar/navbar'
 
 @Component({
     selector: 'app-hero',
-    imports: [Navbar],
+    imports: [],
     templateUrl: './hero.html',
     styleUrl: './hero.scss',
 })

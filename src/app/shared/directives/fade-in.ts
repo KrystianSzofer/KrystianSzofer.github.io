@@ -8,11 +8,12 @@ import {
 } from '@angular/core'
 
 export type FadeDelayMode = 'quick' | 'medium' | 'slow'
+export type FadeType = 'fade-in' | 'fade-left'
 
 @Directive({
     selector: '[appFadeIn]',
     host: {
-        class: 'fade-in',
+        '[class]': 'appFadeType()',
         '[style.transition-delay.ms]': 'delayByMode[appFadeIn()]',
     },
 })
@@ -20,11 +21,12 @@ export class FadeIn {
     private readonly el = inject(ElementRef<HTMLElement>)
     private readonly destroyRef = inject(DestroyRef)
     readonly appFadeIn = input<FadeDelayMode>('medium')
+    readonly appFadeType = input<FadeType>('fade-in')
 
     readonly delayByMode: Record<FadeDelayMode, number> = {
-        quick: 400,
-        slow: 800,
-        medium: 1200,
+        quick: 200,
+        medium: 400,
+        slow: 600,
     }
 
     constructor() {
@@ -45,7 +47,7 @@ export class FadeIn {
                             observer?.unobserve(entry.target)
                     })
                 },
-                { threshold: 0.3 }
+                { threshold: 0.5 }
             )
 
             observer.observe(el)
